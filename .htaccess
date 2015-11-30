@@ -1,0 +1,20 @@
+<IfModule authz_core_module>
+    RewriteEngine on
+    Options +FollowSymLinks
+    RewriteCond $1 !^(index\.php|resources|robots\.txt)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*[^/])/?$ api/index.php/$1 [L,QSA]
+
+</IfModule>
+<IfModule !authz_core_module>
+
+#    RewriteEngine on
+#       RewriteCond $1 !^(index\.php|resources|robots\.txt)
+#       RewriteCond %{REQUEST_FILENAME} !-f
+#       RewriteCond %{REQUEST_FILENAME} !-d
+#       RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+</IfModule>
+Options -Indexes
+
+DirectoryIndex src/index.html

@@ -1,0 +1,20 @@
+{
+  "name": "wood-projects",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.46",
+    "es6-shim": "^0.33.13",
+    "systemjs": "0.19.6"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^1.6.2"
+  },
+  "scripts": {
+    "tsc": "tsc -p src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
