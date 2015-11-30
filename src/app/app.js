@@ -19,8 +19,10 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         angular2_1.Component({
-            selector: 'my-app',
-            template: '<h1>My first Angular 2 app</h1>',
+            selector: 'my-app'
+        }),
+        angular2_1.View({
+            templateUrl: 'src/app/app.php'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

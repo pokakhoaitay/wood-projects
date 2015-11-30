@@ -11,7 +11,7 @@
     "typescript": "^1.6.2"
   },
   "scripts": {
-    "tsc": "tsc -p src"
+    "tsc": "tsc -p src -w"
   },
   "keywords": [],
   "author": "",

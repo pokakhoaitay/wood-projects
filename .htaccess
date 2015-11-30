@@ -17,4 +17,4 @@
 </IfModule>
 Options -Indexes
 
-DirectoryIndex src/index.html
+DirectoryIndex src/index.php

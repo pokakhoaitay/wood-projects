@@ -3,12 +3,17 @@
  */
 
 //noinspection TypeScriptCheckImport
-import {bootstrap, Component} from 'angular2/angular2';
-
+import {bootstrap, Component, View} from 'angular2/angular2';
+import {Settings} from '../utils/settings'
 @Component({
-    selector:'my-app',
-    template:'<h1>My first Angular 2 app</h1>',
+    selector: 'my-app'
+
 })
 
-class   AppComponent{}
+@View ({
+    templateUrl: 'src/app/app.php'
+})
+
+class AppComponent {
+}
 bootstrap(AppComponent)
