@@ -19,7 +19,11 @@
 <script src="./node_modules/angular2/bundles/angular2.dev.js"></script>
 <script>
     System.config({
-        packages: {'./src/app': {defaultExtension: 'js'}}
+        packages: {
+            './src/app': {defaultExtension: 'js'},
+            './src/utils': {defaultExtension: 'js'},
+        }
+        //defaultJSExtensions: true
     });
     System.import('./src/app/app');
 </script>
