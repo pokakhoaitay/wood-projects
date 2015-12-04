@@ -1,10 +1,17 @@
 <IfModule authz_core_module>
     RewriteEngine on
-    Options +FollowSymLinks
-    RewriteCond $1 !^(index\.php|resources|robots\.txt)
+   RewriteBase /wood-projects/
+   RewriteCond     $1 !^(/index\.php|/img|/js|/css|/robots\.txt|/favicon\.ico)
+    #RewriteCond     %{REQUEST_FILENAME} !-f
+    #RewriteCond     %{REQUEST_FILENAME} !-d
+    #RewriteRule     .               api/index.html              [L]
+#    Options +FollowSymLinks
+   # RewriteCond $1 !^(index\.php|resources|robots\.txt)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*[^/])/?$ api/index.php/$1 [L,QSA]
+    #RewriteRule ^(.*)/$ /$1 [L,R=301]
+   #RewriteRule ^(.*[^/])/?$ src/index.html/$1 [L,QSA]
+   RewriteRule ^(.*[^/])/?$ src/index.html [L]
 
 </IfModule>
 <IfModule !authz_core_module>
@@ -13,8 +20,8 @@
 #       RewriteCond $1 !^(index\.php|resources|robots\.txt)
 #       RewriteCond %{REQUEST_FILENAME} !-f
 #       RewriteCond %{REQUEST_FILENAME} !-d
-#       RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+#       RewriteRule ^(.*)$ index.html/$1 [L,QSA]
 </IfModule>
 Options -Indexes
 
-DirectoryIndex src/index.php
+DirectoryIndex src/index.html

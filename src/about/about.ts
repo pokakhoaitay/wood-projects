@@ -10,7 +10,7 @@ import {Component, View} from 'angular2/angular2'
     selector:'w-about',
 })
 @View({
-    templateUrl:'src/about/about.php'
+    templateUrl:'src/about/about.html'
 })
 
 export class AboutCmp{

@@ -15,8 +15,8 @@ import {ROUTER_PROVIDERS
     ,RouterLink
     ,RouterOutlet
     ,ROUTER_PRIMARY_COMPONENT
-    ,LocationStrategy
-    ,HashLocationStrategy
+    //,LocationStrategy
+    //,HashLocationStrategy
 } from 'angular2/router';
 
 
@@ -27,16 +27,17 @@ import {HomeCmp} from '../home/home'
 
 @Component({
     selector: 'my-app',
-
+    //directives: [ROUTER_DIRECTIVES]
 })
 
 @View ({
-    templateUrl: 'src/app/app.php',
+    templateUrl: 'src/app/app.html',
     directives: [ROUTER_DIRECTIVES, RouterLink],
 })
 
 @RouteConfig([
     {path: '/', as: 'HomeCmp', component: HomeCmp},
+    {path: '/home', as: 'HomeCmp', component: HomeCmp},
     {path: '/about', as: 'AboutCmp', component: AboutCmp}
 ])
 
@@ -55,8 +56,9 @@ export class AppCmp {
     public settings = Settings;
 
 }
+//noinspection TypeScriptValidateTypes
 bootstrap(AppCmp, [
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, {useValue: '/'}),
-    provide(LocationStrategy, {useClass: HashLocationStrategy})
+    provide(APP_BASE_HREF, {useValue: '/wood-projects'}),
+    //provide(LocationStrategy, {useClass: HashLocationStrategy})
 ])
