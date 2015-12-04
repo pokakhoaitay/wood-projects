@@ -20,8 +20,8 @@
 <script>
     System.config({
         packages: {
-            './src/app': {defaultExtension: 'js'},
-            './src/utils': {defaultExtension: 'js'},
+            './src': {defaultExtension: 'js'},
+           // './src/utils': {defaultExtension: 'js'},
         }
         //defaultJSExtensions: true
     });

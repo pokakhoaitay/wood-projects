@@ -21,12 +21,10 @@ import {Settings} from '../utils/settings'
 
 
 export class AppComponent {
-
     myName:string;
 
     constructor() {
         this.myName = "Nguyen Hong Tron";
-
     }
 
     public hero:Hero = {
@@ -34,7 +32,7 @@ export class AppComponent {
         name: 'Windstorm'
     };
 
-public settings=Settings;
+    public settings = Settings;
 
 }
 bootstrap(AppComponent)
