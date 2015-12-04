@@ -4,13 +4,15 @@
 
 //noinspection TypeScriptCheckImport
 import {Component, View} from 'angular2/angular2'
+
+
 @Component({
     selector:'w-about',
 })
 @View({
-    templateUrl:'about.php'
+    templateUrl:'src/about/about.php'
 })
 
-export class About{
+export class AboutCmp{
 public haha:string="haha"
 }

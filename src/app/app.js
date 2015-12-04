@@ -15,9 +15,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //noinspection TypeScriptCheckImport
 var angular2_1 = require('angular2/angular2');
+//noinspection TypeScriptCheckImport
+var router_1 = require('angular2/router');
 var settings_1 = require('../utils/settings');
-var AppComponent = (function () {
-    function AppComponent() {
+var about_1 = require('../about/about');
+var home_1 = require('../home/home');
+var AppCmp = (function () {
+    function AppCmp() {
         this.hero = {
             id: 1,
             name: 'Windstorm'
@@ -25,17 +29,26 @@ var AppComponent = (function () {
         this.settings = settings_1.Settings;
         this.myName = "Nguyen Hong Tron";
     }
-    AppComponent = __decorate([
+    AppCmp = __decorate([
         angular2_1.Component({
-            selector: 'my-app'
+            selector: 'my-app',
         }),
         angular2_1.View({
-            templateUrl: 'src/app/app.php'
-        }), 
+            templateUrl: 'src/app/app.php',
+            directives: [router_1.ROUTER_DIRECTIVES, router_1.RouterLink],
+        }),
+        router_1.RouteConfig([
+            { path: '/', as: 'HomeCmp', component: home_1.HomeCmp },
+            { path: '/about', as: 'AboutCmp', component: about_1.AboutCmp }
+        ]), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppCmp);
+    return AppCmp;
 })();
-exports.AppComponent = AppComponent;
-angular2_1.bootstrap(AppComponent);
+exports.AppCmp = AppCmp;
+angular2_1.bootstrap(AppCmp, [
+    router_1.ROUTER_PROVIDERS,
+    angular2_1.provide(router_1.APP_BASE_HREF, { useValue: '/' }),
+    angular2_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })
+]);
 //# sourceMappingURL=app.js.map

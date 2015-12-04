@@ -9,7 +9,6 @@
     <title>WOOD PEOJECTS</title>
 
 
-
 </head>
 <body>
 <my-app>Loading....</my-app>
@@ -17,12 +16,14 @@
 
 <script src="./node_modules/systemjs/dist/system.src.js"></script>
 <script src="./node_modules/angular2/bundles/angular2.dev.js"></script>
+<script src="./node_modules/angular2/bundles/router.dev.js"></script>
 <script>
     System.config({
         packages: {
             './src': {defaultExtension: 'js'},
            // './src/utils': {defaultExtension: 'js'},
-        }
+        },
+        //baseURL: '/wood-projects'
         //defaultJSExtensions: true
     });
     System.import('./src/app/app');
